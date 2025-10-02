@@ -1,0 +1,37 @@
+name: evpatoria_guide
+description: "Официальный гид по Евпатории"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  webview_flutter: ^4.13.0
+  flutter_inappwebview: ^6.0.0 # для обмена сообщениями между JS и Flutter
+  cupertino_icons: ^1.0.6
+  easy_localization: ^3.0.3
+ # maplibre_gl: ^0.22.0
+  geolocator: ^14.0.2          # для геолокации (опционально сейчас)
+  flutter_localizations:
+    sdk: flutter
+  url_launcher: ^6.2.5
+  shared_preferences: ^2.2.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
+
+  # Локализация
+  generate: true
+  assets:
+    - assets/lang/
+    - assets/styles/
+    - assets/map/yandex_map.html
+    - assets/icons/

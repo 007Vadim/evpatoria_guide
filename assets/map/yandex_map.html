@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Яндекс Карты - Евпатория</title>
+  <style>
+    html, body, #map {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+  <!-- ЗАМЕНИТЕ ВАШ_API_КЛЮЧ -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=74334393-3048-4d8f-ae9e-b9c2341dc78f&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    let map;
+    let markers = [];
+
+    // Функция для обновления POI из Flutter
+    window.updatePoiList = function(pois) {
+      // Удаляем старые метки
+      if (map && markers.length > 0) {
+        markers.forEach(marker => map.geoObjects.remove(marker));
+        markers = [];
+      }
+
+      if (!map || !pois || !Array.isArray(pois)) return;
+
+      // Добавляем новые метки
+      pois.forEach(poi => {
+        const placemark = new ymaps.Placemark(
+          [poi.lat, poi.lng],
+          {
+            balloonContent: `<b>${poi.name}</b><br>${poi.description || ''}`,
+            iconCaption: poi.name
+          },
+          {
+            preset: poi.isPremium ? 'islands#redDotIconWithCaption' : 'islands#blueDotIconWithCaption'
+          }
+        );
+
+        placemark.events.add('click', function () {
+          // Вызываем обработчик в Flutter
+          if (window.flutter_inappwebview) {
+            window.flutter_inappwebview.callHandler('onPoiClick', [poi.id]);
+          }
+        });
+
+        map.geoObjects.add(placemark);
+        markers.push(placemark);
+      });
+    };
+
+    // Инициализация карты
+    ymaps.ready(function () {
+      map = new ymaps.Map('map', {
+        center: [45.2077, 33.3704],
+        zoom: 11,
+        controls: ['zoomControl', 'fullscreenControl']
+      });
+
+      // После инициализации можно вызывать updatePoiList из Flutter
+    });
+  </script>
+</body>
+</html>

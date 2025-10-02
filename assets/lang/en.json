@@ -1,0 +1,46 @@
+{
+  "app_name": "Yevpatoria: City Guide",
+  "home": "Home",
+  "guide": "Travel Guide",
+  "routes": "Routes",
+  "reminder": "Reminder",
+  "language": "Language",
+  "search": "Search...",
+
+  "skip": "Skip",
+  "get_started": "Get Started",
+
+  "onboarding_title_1": "Explore Yevpatoria",
+  "onboarding_desc_1": "Discover the city with interactive maps and detailed information about each location.",
+  "onboarding_title_2": "Stories of Yevpatoria",
+  "onboarding_desc_2": "Explore the Ancient City, hidden coastal gems, culinary delights, and cultural heritage.",
+  "onboarding_title_3": "Your guide is always with you",
+  "onboarding_desc_3": "Public transport, events, news, and a tourist reminder — all in one app.",
+  "stories_title": "Stories of Yevpatoria",
+  "public_transport": "Public Transport",
+  "upcoming_events": "Upcoming Events",
+  "city_news": "City News",
+  "view_all": "View All",
+
+  "welcome_title": "Welcome to Yevpatoria!",
+  "welcome_desc": "Discover the beauty and history of our city through captivating videos.",
+  "watch_video": "Watch",
+  "full_guide": "Full City Guide",
+  "full_guide_button": "Full City Guide",
+
+  "story_1_title": "Explore the Ancient City",
+  "story_1_desc": "Book a tour to uncover the secrets of Yevpatoria's historic heart.",
+  "book_tour": "Book Tour",
+
+  "story_2_title": "Hidden Gems of the Coast",
+  "story_2_desc": "Discover secluded beaches and breathtaking coastal views.",
+  "see_on_map": "See on Map",
+
+  "story_3_title": "Culinary Delights",
+  "story_3_desc": "Experience the unique flavors of Yevpatoria's local cuisine.",
+  "find_restaurants": "Find Restaurants",
+
+  "story_4_title": "Cultural Heritage",
+  "story_4_desc": "Immerse yourself in the rich cultural tapestry of Yevpatoria.",
+  "explore": "Explore"
+}
